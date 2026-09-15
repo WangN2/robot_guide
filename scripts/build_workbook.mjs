@@ -186,7 +186,7 @@ summary.freezePanes.freezeRows(5);
 
 const noteRow = 7 + eligibleScores.length;
 summary.mergeCells(`A${noteRow}:G${noteRow}`);
-summary.getRange(`A${noteRow}`).values = [["说明：综合分不能越过硬门槛。星尘 S1 和智动力 D1 的全向能力仍需实机确认；D1 体积、重量与工程代价较高。"]];
+summary.getRange(`A${noteRow}`).values = [["说明：综合分不能越过横移硬门槛和供货资格。双足侧步不等同工业蟹行；Atlas、Figure、Optimus 的采购与SDK开放性需单独判断。"]];
 summary.getRange(`A${noteRow}:G${noteRow}`).format = {
   fill: palette.lightBlue,
   font: { italic: true, color: palette.navy },

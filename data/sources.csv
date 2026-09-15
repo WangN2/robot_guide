@@ -17,3 +17,17 @@ src_flexiv_grav_manual,flexiv_grav,供应商PDF,星擎用户手册_V1.0_202404(2
 src_flexiv_ft_datasheet,flexiv_ft,供应商PDF,拂晓 F_T 传感器数据表_V1.0_zh-CN.pdf,sources/raw/02_非夕_Flexiv/03_FT_拂晓传感器/拂晓 F_T 传感器数据表_V1.0_zh-CN.pdf,,2026-09-15,中,力传感器资料待结构化
 src_tianji_marvin,tianji_marvin_m6ccs,供应商PDF,Marvin系列 三折页 250721-CN.pdf,sources/raw/03_天机智能_Marvin/01_Marvin双臂/Marvin系列 三折页 250721-CN.pdf,2025-07,2026-09-15,中,单臂/双臂模块参数，不含标准底盘
 src_material_index,,内部索引,供应链材料索引.md,sources/raw/00_索引/供应链材料索引.md,,2026-09-15,中,原目录索引的归档副本
+src_boston_atlas,boston_atlas_2026,官方网站,Atlas产品与规格,https://bostondynamics.com/products/atlas/,,2026-09-15,高,披露56自由度、负载、续航、IP67、工作范围和Orbit集成
+src_figure03_product,figure_03,官方网站,Figure 03产品页,https://www.figure.ai/figure,,2026-09-15,高,披露身高、重量、负载、速度和续航
+src_figure03_intro,figure_03,官方技术文章,Introducing Figure 03,https://www.figure.ai/news/introducing-figure-03,2025-10-09,2026-09-15,高,披露触觉、感知、充电、电池安全和量产设计
+src_figure03_bmw,figure_03,官方客户进展,F.03 Arrives at BMW,https://www.figure.ai/news/f-03-at-bmw,2026-06-30,2026-09-15,高,披露BMW工厂物流验证和全身操作
+src_tesla_ai,tesla_optimus,官方网站,Tesla AI and Robotics,https://www.tesla.com/AI,,2026-09-15,高,仅说明双足通用自主机器人目标；未给工程规格
+src_tesla_2026q2,tesla_optimus,官方投资者文件,Tesla 2026 Q2 Update,https://ir.tesla.com/_flysystem/s3/sec/000162828026049213/tsla-20260722-gen.pdf,2026-07-22,2026-09-15,高,披露Optimus产线建设与训练数据用途；未给本体规格
+src_limx_oli,limx_oli_edu,官方网站,LimX Oli产品参数,https://www.limxdynamics.com/zh/products/oli/spec,,2026-09-15,高,披露自由度、尺寸、负载、续航、算力和开发接口
+src_limx_tron2,limx_tron2_dualarm,官方网站,TRON 2产品参数,https://www.limxdynamics.com/zh/products/tron2/spec,,2026-09-15,高,披露双臂负载精度、多形态移动、接口和开发工具
+src_galaxea_r1pro_product,galaxea_r1pro_2026,官方网站,R1 Pro产品参数,https://galaxea-ai.com/cn/products/R1-Pro,,2026-09-15,高,披露三舵轮全向底盘、双臂负载、工作空间和算力
+src_galaxea_r1pro_docs,galaxea_r1pro_2026,官方开发文档,R1 Pro 2026硬件说明,https://docs.galaxea-dynamics.com/R1Pro/docs/2026/,,2026-09-15,高,披露重量、电池、夹爪、接口和机械臂无制动器风险
+src_tars_tianhai,tars_a1,客户官方新闻,天海电子与它石智航战略合作,https://www.thb.com.cn/content/details_17_319668.html,2026-06-28,2026-09-15,高,确认汽车线束联合产线与近半年联合攻坚
+src_tars_shanghai,tars_a1,政府官方信息,它石智航产业化闭环,https://www.sheitc.sh.gov.cn/zxxx/20260710/480d32461ca145e3bf067ce67dc6c203.html,2026-07-10,2026-09-15,高,披露安波福百台计划、33类场景、46工位和DexHand
+src_tars_guinness,tars_a1,独立纪录机构,Most sub-millimeter wire harness assembled by a robot in one hour,https://guinnessworldrecords.com.br/world-records/782788-most-sub-millimeter-wire-harness-assembled-by-a-robot-in-one-hour,,2026-09-15,高,确认一小时105次亚毫米线束装配纪录
+src_tars_internal,tars_a1,内部沟通,它石线束部署与工程问题纪要,conversation-context:2026-09-15,2026-09-15,2026-09-15,待核验,反馈百台部署尚未达到要求并存在臂展、工装耗材、夹爪和MES依赖问题
