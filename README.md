@@ -15,7 +15,7 @@
 - `docs/methodology.md`：字段、评分和更新规则。
 - `docs/vendors/`：供应商层面的记录。
 - `outputs/机器人本体产品主表.xlsx`：面向评审的工作簿，由结构化数据生成。
-- `sources/private/`：供应商原始文件暂存区，默认不提交Git。
+- `sources/raw/`：供应商原始文件，按原目录归档；PDF 使用 Git LFS 管理。
 
 ## 当前结论
 
@@ -44,4 +44,4 @@ node scripts/build_workbook.mjs
 
 ## 原始资料策略
 
-供应商PDF和开发手册可能包含非公开信息。仓库可见性和授权范围未确认前，原始文件不提交；`data/sources.csv` 保留文件名和外部存放位置。确认仓库为私有且允许上传后，再决定是否纳入Git LFS。
+供应商 PDF、开发手册和原始索引统一存放在 `sources/raw/`，尽量保留供应商与产品层级。PDF 使用 Git LFS，便于后续更新大文件；每份材料同时登记到 `data/sources.csv`，对比结论应能追溯到具体文件或官方页面。

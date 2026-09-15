@@ -4,10 +4,16 @@ src_astribot_s1_official,astribot_s1,官方网站,星尘智能S1产品页,https:
 src_astribot_suite,astribot_s1,研发论文,Towards Human-level Intelligence via Human-like Whole-Body Manipulation,https://arxiv.org/abs/2507.17141,2025-07-23,2026-09-15,高,包含23自由度构成和三自由度全向底盘
 src_unitree_g1d,unitree_g1d_flagship,官方网站,Unitree G1-D产品参数,https://www.unitree.com/cn/mobile/G1-D/,,2026-09-15,高,同时覆盖旗舰版和通用版
 src_unitree_g1d_std,unitree_g1d_standard,官方网站,Unitree G1-D产品参数,https://www.unitree.com/cn/mobile/G1-D/,,2026-09-15,高,通用版无主动底盘参数
-src_zdl_d1,zdl_d1,供应商PDF,D1（擎骏系列）.pdf,external-private/智动力/D1（擎骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测
-src_zdl_juno2,zdl_juno2,供应商PDF,JUNO2-SD（龙骏系列）.pdf,external-private/智动力/JUNO2-SD（龙骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测
-src_zdl_juno1,zdl_juno1,供应商PDF,JUNO1-P（智骏系列）.pdf,external-private/智动力/JUNO1-P（智骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测
-src_zdl_l1,zdl_l1,供应商PDF,L1（灵骏系列）.pdf,external-private/智动力/L1（灵骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测
-src_zdl_z1,zdl_z1,供应商开发手册,全尺寸人形机器人Z1开发手册 r26.6.md,external-private/智动力/全尺寸人形机器人Z1开发手册 r26.6.md,2026-07-25,2026-09-15,中,接口文档存在多项待澄清问题
-src_tianji_marvin,tianji_marvin_m6ccs,供应商PDF,Marvin系列 三折页 250721-CN.pdf,external-private/天机智能/Marvin系列 三折页 250721-CN.pdf,2025-07,2026-09-15,中,单臂/双臂模块参数，不含标准底盘
-
+src_zdl_d1,zdl_d1,供应商PDF,D1（擎骏系列）.pdf,sources/raw/01_智动力/D1（擎骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测
+src_zdl_juno2,zdl_juno2,供应商PDF,JUNO2-SD（龙骏系列）.pdf,sources/raw/01_智动力/JUNO2-SD（龙骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测
+src_zdl_juno1,zdl_juno1,供应商PDF,JUNO1-P（智骏系列）.pdf,sources/raw/01_智动力/JUNO1-P（智骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测
+src_zdl_l1,zdl_l1,供应商PDF,L1（灵骏系列）.pdf,sources/raw/01_智动力/L1（灵骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测
+src_zdl_z1,zdl_z1,供应商开发手册,全尺寸人形机器人Z1开发手册 r26.6.md,sources/raw/01_智动力/全尺寸人形机器人Z1开发手册 r26.6.md,2026-07-25,2026-09-15,中,接口文档存在多项待澄清问题
+src_zdl_ha,zdl_ha,供应商PDF,人形臂（HA系列）.pdf,sources/raw/01_智动力/人形臂（HA系列）.pdf,,2026-09-15,中,待纳入机械臂专项对比
+src_zdl_fa,zdl_fa,供应商PDF,桌面臂（FA系列）.pdf,sources/raw/01_智动力/桌面臂（FA系列）.pdf,,2026-09-15,中,待纳入机械臂专项对比
+src_flexiv_rizon4_manual,flexiv_rizon4,供应商PDF,Rizon4 用户手册_V3.0_zh-CN.pdf,sources/raw/02_非夕_Flexiv/01_Rizon_拂晓/Rizon4 用户手册_V3.0_zh-CN.pdf,,2026-09-15,中,待纳入机械臂专项对比
+src_flexiv_rizon_datasheet,flexiv_rizon,供应商PDF,拂晓(Rizon)机器人数据表_V2.0_202409.pdf,sources/raw/02_非夕_Flexiv/01_Rizon_拂晓/拂晓(Rizon)机器人数据表_V2.0_202409.pdf,2024-09,2026-09-15,中,待纳入机械臂专项对比
+src_flexiv_grav_manual,flexiv_grav,供应商PDF,星擎用户手册_V1.0_202404(2).pdf,sources/raw/02_非夕_Flexiv/02_Grav_星擎/星擎用户手册_V1.0_202404(2).pdf,2024-04,2026-09-15,中,末端执行器资料待结构化
+src_flexiv_ft_datasheet,flexiv_ft,供应商PDF,拂晓 F_T 传感器数据表_V1.0_zh-CN.pdf,sources/raw/02_非夕_Flexiv/03_FT_拂晓传感器/拂晓 F_T 传感器数据表_V1.0_zh-CN.pdf,,2026-09-15,中,力传感器资料待结构化
+src_tianji_marvin,tianji_marvin_m6ccs,供应商PDF,Marvin系列 三折页 250721-CN.pdf,sources/raw/03_天机智能_Marvin/01_Marvin双臂/Marvin系列 三折页 250721-CN.pdf,2025-07,2026-09-15,中,单臂/双臂模块参数，不含标准底盘
+src_material_index,,内部索引,供应链材料索引.md,sources/raw/00_索引/供应链材料索引.md,,2026-09-15,中,原目录索引的归档副本
