@@ -35,6 +35,7 @@ const weights = readCsv("score_weights.csv");
 const scores = readCsv("scenario_scores.csv");
 const questions = readCsv("questions.csv");
 const sources = readCsv("sources.csv");
+const images = readCsv("images.csv");
 
 const wb = Workbook.create();
 wb.metadata = {
@@ -194,7 +195,60 @@ summary.getRange(`A${noteRow}:G${noteRow}`).format = {
   rowHeight: 32,
 };
 
-// 2. 场景评分：权重与公式均在表内可审计。
+// 2. 型号图示：与评分表使用同一 model_id，便于快速识别和追溯。
+const gallery = baseSheet("型号图示");
+gallery.mergeCells("A1:F1");
+gallery.getRange("A1").values = [["当前评比型号图示｜仅用于型号识别，参数与配置以来源证据为准"]];
+gallery.getRange("A1:F1").format = titleFormat;
+gallery.getRange("A2:F2").values = [["图片来源和本地文件映射见 data/images.csv；图片版权归原厂商或原发布方。", "", "", "", "", ""]];
+gallery.mergeCells("A2:F2");
+gallery.getRange("A2:F2").format = {
+  fill: palette.lightBlue,
+  font: { italic: true, color: palette.navy },
+  horizontalAlignment: "left",
+  verticalAlignment: "center",
+};
+gallery.getRange("A:A").format.columnWidth = 34;
+gallery.getRange("C:C").format.columnWidth = 34;
+gallery.getRange("E:E").format.columnWidth = 34;
+gallery.getRange("B:B").format.columnWidth = 3;
+gallery.getRange("D:D").format.columnWidth = 3;
+gallery.getRange("F:F").format.columnWidth = 3;
+
+const galleryColumns = [0, 2, 4];
+images.forEach((row, index) => {
+  const group = Math.floor(index / 3);
+  const column = galleryColumns[index % 3];
+  const labelRow = 3 + group * 13;
+  const imageRow = labelRow + 1;
+  gallery.getCell(labelRow, column).values = [[row.model]];
+  gallery.getCell(labelRow, column).format = {
+    fill: palette.blue,
+    font: { bold: true, color: palette.dark },
+    horizontalAlignment: "center",
+    verticalAlignment: "center",
+  };
+  gallery.getCell(labelRow + 11, column).values = [[row.source_type]];
+  gallery.getCell(labelRow + 11, column).format = {
+    font: { italic: true, color: "#6B7280", size: 9 },
+    horizontalAlignment: "center",
+  };
+  const imagePath = path.join(repoRoot, row.image_path);
+  const extension = path.extname(imagePath).toLowerCase();
+  const mime = extension === ".png" ? "image/png" : "image/jpeg";
+  const dataUrl = `data:${mime};base64,${fs.readFileSync(imagePath).toString("base64")}`;
+  gallery.images.add({
+    dataUrl,
+    anchor: {
+      from: { row: imageRow, col: column },
+      extent: { widthPx: 245, heightPx: 190 },
+    },
+  });
+});
+gallery.getRange("3:55").format.rowHeight = 18;
+gallery.freezePanes.freezeRows(2);
+
+// 3. 场景评分：权重与公式均在表内可审计。
 const scoring = baseSheet("场景评分");
 scoring.mergeCells("A1:M1");
 scoring.getRange("A1").values = [["场景适配评分｜0=不具备，5=领先；综合分由权重自动计算"]];
@@ -264,7 +318,7 @@ scoring.getRange("M:M").format.columnWidth = 54;
 scoring.freezePanes.freezeRows(6);
 scoring.tables.add(`A6:M${scoreEnd}`, true, "ScenarioScores");
 
-// 3. 参数主表：输入数据，字段保持机器可读。
+// 4. 参数主表：输入数据，字段保持机器可读。
 const robotSheet = baseSheet("参数主表");
 robotSheet.mergeCells("A1:AK1");
 robotSheet.getRange("A1").values = [["机器人本体参数主表｜空白表示待供应商确认，不代表 0"]];
@@ -293,7 +347,7 @@ robotSheet.freezePanes.freezeRows(3);
 robotSheet.freezePanes.freezeColumns(3);
 robotSheet.tables.add(`A3:AK${3 + robots.length}`, true, "RobotMasterData");
 
-// 4. 问题清单：将信息缺口转为可关闭的动作。
+// 5. 问题清单：将信息缺口转为可关闭的动作。
 const questionSheet = baseSheet("问题清单");
 questionSheet.mergeCells("A1:J1");
 questionSheet.getRange("A1").values = [["供应商问题与 POC 清单｜优先关闭硬门槛、安全和接口风险"]];
@@ -331,10 +385,10 @@ questionSheet.getRange(`H4:H${questionEnd}`).dataValidation = {
 questionSheet.freezePanes.freezeRows(3);
 questionSheet.tables.add(`A3:J${questionEnd}`, true, "SupplierQuestions");
 
-// 5. 来源：每个参数结论都能回到证据。
+// 6. 来源：每个参数结论都能回到证据。
 const sourceSheet = baseSheet("来源证据");
 sourceSheet.mergeCells("A1:I1");
-sourceSheet.getRange("A1").values = [["来源证据登记｜内部文件仅登记名称，不随仓库上传"]];
+sourceSheet.getRange("A1").values = [["来源证据登记｜原始供应商文件按仓库策略归档"]];
 sourceSheet.getRange("A1:I1").format = titleFormat;
 const sourceHeaders = Object.keys(sources[0]);
 writeMatrix(sourceSheet, "A3", [sourceHeaders]);
@@ -353,9 +407,9 @@ sourceSheet.getRange("G:G").format.columnWidth = 14;
 sourceSheet.getRange("H:H").format.columnWidth = 12;
 sourceSheet.getRange("I:I").format.columnWidth = 38;
 for (let row = 4; row <= sourceEnd; row += 1) {
-  const url = sources[row - 4].source_url_or_path;
+  const url = sources[row - 4].source_locator;
   if (/^https?:\/\//.test(url)) {
-    sourceSheet.getRange(`D${row}`).formulas = [[`=HYPERLINK("${url}","${url}")`]];
+    sourceSheet.getRange(`E${row}`).formulas = [[`=HYPERLINK("${url}","${url}")`]];
   }
 }
 sourceSheet.freezePanes.freezeRows(3);
@@ -363,20 +417,20 @@ sourceSheet.tables.add(`A3:I${sourceEnd}`, true, "EvidenceSources");
 
 wb.recalculate();
 
-const keyCheck = wb.inspect({
+const keyCheck = await wb.inspect({
   kind: "table",
   range: `场景评分!A1:M${scoreEnd}`,
   include: "values,formulas",
-  table_max_rows: 20,
-  table_max_cols: 13,
+  tableMaxRows: 24,
+  tableMaxCols: 13,
 });
 console.log("KEY_RANGE_CHECK");
 console.log(keyCheck.ndjson ?? JSON.stringify(keyCheck));
 
-const formulaErrors = wb.inspect({
+const formulaErrors = await wb.inspect({
   kind: "match",
-  search_term: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A|#NUM!",
-  options: { use_regex: true, max_results: 200 },
+  searchTerm: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A|#NUM!|#NULL!|#SPILL!|#CALC!",
+  options: { useRegex: true, maxResults: 200 },
   summary: "final formula error scan",
 });
 console.log("FORMULA_ERROR_SCAN");
@@ -384,6 +438,7 @@ console.log(formulaErrors.ndjson ?? JSON.stringify(formulaErrors));
 
 for (const [sheetName, range, fileName] of [
   ["决策摘要", `A1:G${noteRow}`, "决策摘要.png"],
+  ["型号图示", "A1:F55", "型号图示.png"],
   ["场景评分", `A1:M${scoreEnd}`, "场景评分.png"],
   ["参数主表", `A1:AK${3 + robots.length}`, "参数主表.png"],
   ["问题清单", `A1:J${questionEnd}`, "问题清单.png"],
@@ -399,12 +454,12 @@ await exported.save(outputPath);
 
 const savedBlob = await FileBlob.load(outputPath);
 const savedWorkbook = await SpreadsheetFile.importXlsx(savedBlob);
-const savedCheck = savedWorkbook.inspect({
+const savedCheck = await savedWorkbook.inspect({
   kind: "table",
   range: `决策摘要!A1:G${noteRow}`,
   include: "values,formulas",
-  table_max_rows: 30,
-  table_max_cols: 7,
+  tableMaxRows: 30,
+  tableMaxCols: 7,
 });
 console.log("SAVED_FILE_CHECK");
 console.log(savedCheck.ndjson ?? JSON.stringify(savedCheck));

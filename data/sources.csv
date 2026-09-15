@@ -1,7 +1,9 @@
 source_id,model_id,source_type,title,source_locator,document_date,accessed_date,confidence,notes
 src_agibot_g2_manual,agibot_g2,官方用户手册,智元精灵G2产品用户手册,https://www.agibot.com.cn/filepage/362.html,2026-04-28,2026-09-15,高,参数表和接口定义较完整
-src_astribot_s1_official,astribot_s1,官方网站,星尘智能S1产品页,https://www.astribot.com/product/,,2026-09-15,高,包含操作性能和整机基础参数
-src_astribot_suite,astribot_s1,研发论文,Towards Human-level Intelligence via Human-like Whole-Body Manipulation,https://arxiv.org/abs/2507.17141,2025-07-23,2026-09-15,高,包含23自由度构成和三自由度全向底盘
+src_astribot_t1_home,astribot_t1,官方网站,星尘智能首页 T1 发布信息,https://www.astribot.com/,,2026-09-15,高,确认T1型号与8.99万元起售价；官网尚无T1完整数据表
+src_astribot_t1_wuxi,astribot_t1,政府公开信息,技术硬核价格亲民 多元场景显身手,https://www.wuxi.gov.cn/doc/2026/07/11/4803940.shtml,2026-07-11,2026-09-15,高,确认无锡工厂量产下线、23自由度、单臂5kg、绳驱和底盘扩展接口
+src_astribot_t1_sznews,astribot_t1,地方官方媒体,煎牛排调酒做实验 星尘智能发布绳驱AI机器人T1,https://www.sznews.com/news/content/2026-05/27/content_32067943.htm,2026-05-27,2026-09-15,中,确认155cm、约66kg、23自由度不含末端、单臂5kg、自动回充和快捷换电
+src_astribot_t1_wrc,astribot_t1,行业展会官方信息,2026世界机器人大会星尘智能展品介绍,https://wrc.cie.org.cn/expo/company/441.html,2026-08-19,2026-09-15,中高,确认轻量化机身、紧凑底盘、多样末端和软硬件扩展；未披露轮系
 src_unitree_g1d,unitree_g1d_flagship,官方网站,Unitree G1-D产品参数,https://www.unitree.com/cn/mobile/G1-D/,,2026-09-15,高,同时覆盖旗舰版和通用版
 src_unitree_g1d_std,unitree_g1d_standard,官方网站,Unitree G1-D产品参数,https://www.unitree.com/cn/mobile/G1-D/,,2026-09-15,高,通用版无主动底盘参数
 src_zdl_d1,zdl_d1,供应商PDF,D1（擎骏系列）.pdf,sources/raw/01_智动力/D1（擎骏系列）.pdf,,2026-09-15,中,供应商产品册，尚未实测

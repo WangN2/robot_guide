@@ -1,6 +1,6 @@
 model_id,vendor,model,eligible_for_ranking,crab_gate,base_score,workspace_score,force_score,precision_score,interface_score,industrial_score,score_note
 agibot_g2,智元,AgiBot 精灵G2,是,通过,5,5,5,4,4,4,四舵轮、5自由度躯干、全关节力矩传感；需验证横移后整链路精度
-astribot_s1,星尘,Astribot S1,是,通过待实测,5,5,3,4,3,3,论文确认全向底盘；量产配置、接口和工业认证资料不足
+astribot_t1,星尘,Astribot T1,是,待确认,2,4,4,2,4,4,紧凑轮式底盘但轮系和蟹行能力未公开；绳驱柔性和量产进展较好，精度与SDK量化不足
 zdl_d1,智动力,D1 擎骏系列,是,通过待实测,5,5,3,3,3,3,四轮四转明确支持蟹行；整机重且精度和力控证据不足
 unitree_g1d_flagship,宇树,Unitree G1-D 旗舰版,是,不通过,1,4,2,3,3,2,差速底盘不能纯横移；更偏数据采集和开发平台
 zdl_juno2,智动力,JUNO2-SD 龙骏系列,是,不通过,1,4,2,2,3,2,差速底盘为硬伤；重复定位和力控指标未公开

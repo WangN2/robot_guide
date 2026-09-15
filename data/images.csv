@@ -1,0 +1,13 @@
+image_id,model_id,model,image_path,source_type,source_title,source_locator,accessed_date,notes
+img_agibot_g2,agibot_g2,AgiBot 精灵G2,docs/assets/models/agibot-g2.png,官方网站,智元精灵G2产品用户手册,https://www.agibot.com.cn/filepage/362.html,2026-09-15,官网产品图
+img_astribot_t1,astribot_t1,Astribot T1,docs/assets/models/astribot-t1.jpg,官方网站,星尘智能首页T1主视觉,https://www.astribot.com/,2026-09-15,官网视频封面
+img_zdl_d1,zdl_d1,D1 擎骏系列,docs/assets/models/zdl-d1.jpg,供应商PDF,D1（擎骏系列）第一页,sources/raw/01_智动力/D1（擎骏系列）.pdf,2026-09-15,供应商宣传页渲染图
+img_zdl_juno2,zdl_juno2,JUNO2-SD 龙骏系列,docs/assets/models/zdl-juno2-sd.jpg,供应商PDF,JUNO2-SD（龙骏系列）第一页,sources/raw/01_智动力/JUNO2-SD（龙骏系列）.pdf,2026-09-15,供应商宣传页渲染图
+img_unitree_g1d,unitree_g1d_flagship,Unitree G1-D 旗舰版,docs/assets/models/unitree-g1d.jpg,官方网站,Unitree G1-D产品页,https://www.unitree.com/cn/mobile/G1-D/,2026-09-15,官网产品图
+img_boston_atlas,boston_atlas_2026,Atlas,docs/assets/models/boston-atlas.jpg,官方网站,Atlas产品页,https://bostondynamics.com/products/atlas/,2026-09-15,官网Open Graph图
+img_figure03,figure_03,Figure 03,docs/assets/models/figure-03.jpg,官方网站,Figure 03产品页,https://www.figure.ai/figure,2026-09-15,官网主视觉
+img_optimus,tesla_optimus,Optimus,docs/assets/models/tesla-optimus.jpg,第三方型号图库,Optimus (Tesla Bot),https://robotsguide.com/robots/optimus,2026-09-15,Tesla官网缺少稳定静态产品图直链；仅用于型号识别
+img_limx_oli,limx_oli_edu,LimX Oli EDU,docs/assets/models/limx-oli-edu.jpg,经销商产品图,LimX Oli EDU Full-Size Humanoid Robot,https://www.maverickdrone.com/products/limx-oli-full-size-general-purpose-humanoid-robot,2026-09-15,参数仍以逐际动力官网为准
+img_limx_tron2,limx_tron2_dualarm,TRON 2 双臂形态,docs/assets/models/limx-tron2.jpg,第三方型号图库,TRON 2 by LimX Dynamics,https://ui44.com/robots/limx-tron-2,2026-09-15,参数仍以逐际动力官网为准
+img_galaxea_r1pro,galaxea_r1pro_2026,Galaxea R1 Pro 2026,docs/assets/models/galaxea-r1-pro.jpg,官方网站,R1 Pro产品页,https://galaxea-ai.com/cn/products/R1-Pro,2026-09-15,官网产品主视觉
+img_tars_a1,tars_a1,TARS A1,docs/assets/models/tars-a1.jpg,政府公开信息,它石智航产业化闭环,https://www.sheitc.sh.gov.cn/zxxx/20260710/480d32461ca145e3bf067ce67dc6c203.html,2026-09-15,线束装配公开活动照片
