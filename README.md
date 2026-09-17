@@ -30,37 +30,27 @@
 - 它石智航 TARS A1
 - 千寻智能 Moz1 Pro
 
-## 各家本体图示
-
-以下为当前重点评比的13款本体。图示仅用于型号识别，不表示尺寸比例或最终交付配置。参数和证据来源见 [`data/images.csv`](data/images.csv) 与 [`data/sources.csv`](data/sources.csv)。
-
-|  |  |  |
-|---|---|---|
-| <img src="docs/assets/models/agibot-g2.png" alt="智元精灵 G2" width="230"><br>**智元精灵 G2** | <img src="docs/assets/models/galaxea-r1-pro.jpg" alt="星海图 R1 Pro 2026" width="230"><br>**星海图 R1 Pro 2026** | <img src="docs/assets/models/spirit-moz1-pro.jpg" alt="千寻智能 Moz1 Pro" width="230"><br>**千寻智能 Moz1 Pro** |
-| <img src="docs/assets/models/zdl-d1.jpg" alt="智动力 D1" width="230"><br>**智动力 D1** | <img src="docs/assets/models/tars-a1.jpg" alt="它石 TARS A1" width="230"><br>**它石 TARS A1** | <img src="docs/assets/models/astribot-t1.jpg" alt="星尘 Astribot T1" width="230"><br>**星尘 Astribot T1** |
-| <img src="docs/assets/models/boston-atlas.jpg" alt="Boston Dynamics Atlas" width="230"><br>**Boston Dynamics Atlas** | <img src="docs/assets/models/figure-03.jpg" alt="Figure 03" width="230"><br>**Figure 03** | <img src="docs/assets/models/tesla-optimus.jpg" alt="Tesla Optimus" width="230"><br>**Tesla Optimus**（第三方识别图） |
-| <img src="docs/assets/models/limx-oli-edu.jpg" alt="逐际动力 Oli EDU" width="230"><br>**逐际动力 Oli EDU** | <img src="docs/assets/models/limx-tron2.jpg" alt="逐际动力 TRON 2 双臂形态" width="230"><br>**逐际动力 TRON 2 双臂形态**（第三方识别图） | <img src="docs/assets/models/unitree-g1d.jpg" alt="宇树 G1-D 旗舰版" width="230"><br>**宇树 G1-D 旗舰版** |
-| <img src="docs/assets/models/zdl-juno2-sd.jpg" alt="智动力 JUNO2-SD" width="230"><br>**智动力 JUNO2-SD** |  |  |
-
-## 布线捋线对比结果
+## 各家本体对比结果
 
 以工厂布线、捋线和接插件装配为目标，当前建议分层如下：
 
-| 排名 | 本体 | 综合分 | 横移门槛 | 当前结论 |
-|---:|---|---:|---|---|
-| 1 | 智元精灵 G2 | **4.60** | 通过 | **优先 POC**；全向、工作空间和量化力控最均衡，验证移动后整链路精度。 |
-| 2 | 星海图 R1 Pro 2026 | **4.10** | 通过 | **条件 POC**；底盘和工作空间合适，主要风险是 ±0.5 mm 和机械臂无制动器。 |
-| 3 | 千寻智能 Moz1 Pro | **3.93** | 通过待实测 | **条件 POC**；SDK确认横移，公开力控接口、Pro专属手册和连续运行证据不足。 |
-| 4 | Boston Dynamics Atlas | 3.85 | 双足待实测 | 技术标杆；工业能力强，但采购、国内交付和接口开放性不足。 |
-| 5 | Figure 03 | 3.80 | 双足待实测 | 技术标杆；触觉和量产设计突出，无公开工业SDK。 |
-| 6 | 智动力 D1 | 3.80 | 通过待实测 | 条件 POC；四轮四转、负载高，但约300 kg且精度、力控证据不足。 |
-| 7 | 它石 TARS A1 | 3.65 | 待确认 | 专项尽调；线束任务证据最强，本体规格和规模部署验收数据不透明。 |
-| 8 | 逐际动力 Oli EDU | 3.35 | 双足待实测 | 开发平台；工具链开放，工业精度和可靠性不足。 |
-| 9 | 星尘 Astribot T1 | 3.20 | 待确认 | 补齐资料；量产和柔性突出，轮系、精度和SDK指标未完整披露。 |
-| 10 | 逐际动力 TRON 2 双臂形态 | 3.20 | 待确认 | 开发平台；“四向移动”尚不能等同保持朝向纯横移。 |
-| 11 | Tesla Optimus | 2.80 | 待确认 | 持续观察；缺少可采购工程规格和第三方集成方式。 |
-| 12 | 宇树 G1-D 旗舰版 | 2.30 | 不通过 | 差速底盘不能纯横移，更适合数据采集和开发。 |
-| 13 | 智动力 JUNO2-SD | 2.15 | 不通过 | 差速底盘不满足当前布线移动硬门槛。 |
+图片与型号、评分和结论按行对应。图示仅用于型号识别，不表示尺寸比例或最终交付配置；来源见 [`data/images.csv`](data/images.csv)。
+
+| 图示 | 排名 | 本体 | 综合分 | 横移门槛 | 当前结论 |
+|---|---:|---|---:|---|---|
+| <img src="docs/assets/models/agibot-g2.png" alt="智元精灵 G2" width="135"> | 1 | **智元精灵 G2** | **4.60** | 通过 | **优先 POC**；全向、工作空间和量化力控最均衡，验证移动后整链路精度。 |
+| <img src="docs/assets/models/galaxea-r1-pro.jpg" alt="星海图 R1 Pro 2026" width="135"> | 2 | **星海图 R1 Pro 2026** | **4.10** | 通过 | **条件 POC**；底盘和工作空间合适，主要风险是 ±0.5 mm 和机械臂无制动器。 |
+| <img src="docs/assets/models/spirit-moz1-pro.jpg" alt="千寻智能 Moz1 Pro" width="135"> | 3 | **千寻智能 Moz1 Pro** | **3.93** | 通过待实测 | **条件 POC**；SDK确认横移，公开力控接口、Pro专属手册和连续运行证据不足。 |
+| <img src="docs/assets/models/boston-atlas.jpg" alt="Boston Dynamics Atlas" width="135"> | 4 | **Boston Dynamics Atlas** | 3.85 | 双足待实测 | 技术标杆；工业能力强，但采购、国内交付和接口开放性不足。 |
+| <img src="docs/assets/models/figure-03.jpg" alt="Figure 03" width="135"> | 5 | **Figure 03** | 3.80 | 双足待实测 | 技术标杆；触觉和量产设计突出，无公开工业SDK。 |
+| <img src="docs/assets/models/zdl-d1.jpg" alt="智动力 D1" width="135"> | 6 | **智动力 D1** | 3.80 | 通过待实测 | 条件 POC；四轮四转、负载高，但约300 kg且精度、力控证据不足。 |
+| <img src="docs/assets/models/tars-a1.jpg" alt="它石 TARS A1" width="135"> | 7 | **它石 TARS A1** | 3.65 | 待确认 | 专项尽调；线束任务证据最强，本体规格和规模部署验收数据不透明。 |
+| <img src="docs/assets/models/limx-oli-edu.jpg" alt="逐际动力 Oli EDU" width="135"> | 8 | **逐际动力 Oli EDU** | 3.35 | 双足待实测 | 开发平台；工具链开放，工业精度和可靠性不足。 |
+| <img src="docs/assets/models/astribot-t1.jpg" alt="星尘 Astribot T1" width="135"> | 9 | **星尘 Astribot T1** | 3.20 | 待确认 | 补齐资料；量产和柔性突出，轮系、精度和SDK指标未完整披露。 |
+| <img src="docs/assets/models/limx-tron2.jpg" alt="逐际动力 TRON 2 双臂形态" width="135"> | 10 | **逐际动力 TRON 2 双臂形态** | 3.20 | 待确认 | 开发平台；“四向移动”尚不能等同保持朝向纯横移。（第三方识别图） |
+| <img src="docs/assets/models/tesla-optimus.jpg" alt="Tesla Optimus" width="135"> | 11 | **Tesla Optimus** | 2.80 | 待确认 | 持续观察；缺少可采购工程规格和第三方集成方式。（第三方识别图） |
+| <img src="docs/assets/models/unitree-g1d.jpg" alt="宇树 G1-D 旗舰版" width="135"> | 12 | **宇树 G1-D 旗舰版** | 2.30 | 不通过 | 差速底盘不能纯横移，更适合数据采集和开发。 |
+| <img src="docs/assets/models/zdl-juno2-sd.jpg" alt="智动力 JUNO2-SD" width="135"> | 13 | **智动力 JUNO2-SD** | 2.15 | 不通过 | 差速底盘不满足当前布线移动硬门槛。 |
 
 ## 核心候选参数
 
