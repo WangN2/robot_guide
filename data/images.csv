@@ -1,5 +1,6 @@
 image_id,model_id,model,image_path,source_type,source_title,source_locator,accessed_date,notes
 img_agibot_g2,agibot_g2,AgiBot 精灵G2,docs/assets/models/agibot-g2.png,官方网站,智元精灵G2产品用户手册,https://www.agibot.com.cn/filepage/362.html,2026-09-15,官网产品图
+img_spirit_moz1_pro,spirit_moz1_pro,Moz1 Pro,docs/assets/models/spirit-moz1-pro.jpg,供应商PDF,Moz1 Pro产品彩页第4页,sources/raw/04_千寻智能_Moz1/Moz1_Pro_产品彩页.pdf,2026-09-17,供应商产品视觉；仅用于型号识别
 img_astribot_t1,astribot_t1,Astribot T1,docs/assets/models/astribot-t1.jpg,官方网站,星尘智能首页T1主视觉,https://www.astribot.com/,2026-09-15,官网视频封面
 img_zdl_d1,zdl_d1,D1 擎骏系列,docs/assets/models/zdl-d1.jpg,供应商PDF,D1（擎骏系列）第一页,sources/raw/01_智动力/D1（擎骏系列）.pdf,2026-09-15,供应商宣传页渲染图
 img_zdl_juno2,zdl_juno2,JUNO2-SD 龙骏系列,docs/assets/models/zdl-juno2-sd.jpg,供应商PDF,JUNO2-SD（龙骏系列）第一页,sources/raw/01_智动力/JUNO2-SD（龙骏系列）.pdf,2026-09-15,供应商宣传页渲染图
