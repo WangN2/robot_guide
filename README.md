@@ -30,22 +30,48 @@
 - 它石智航 TARS A1
 - 千寻智能 Moz1 Pro
 
-## 当前结论
+## 各家本体图示
+
+以下为当前重点评比的13款本体。图示仅用于型号识别，不表示尺寸比例或最终交付配置。参数和证据来源见 [`data/images.csv`](data/images.csv) 与 [`data/sources.csv`](data/sources.csv)。
+
+|  |  |  |
+|---|---|---|
+| <img src="docs/assets/models/agibot-g2.png" alt="智元精灵 G2" width="230"><br>**智元精灵 G2** | <img src="docs/assets/models/galaxea-r1-pro.jpg" alt="星海图 R1 Pro 2026" width="230"><br>**星海图 R1 Pro 2026** | <img src="docs/assets/models/spirit-moz1-pro.jpg" alt="千寻智能 Moz1 Pro" width="230"><br>**千寻智能 Moz1 Pro** |
+| <img src="docs/assets/models/zdl-d1.jpg" alt="智动力 D1" width="230"><br>**智动力 D1** | <img src="docs/assets/models/tars-a1.jpg" alt="它石 TARS A1" width="230"><br>**它石 TARS A1** | <img src="docs/assets/models/astribot-t1.jpg" alt="星尘 Astribot T1" width="230"><br>**星尘 Astribot T1** |
+| <img src="docs/assets/models/boston-atlas.jpg" alt="Boston Dynamics Atlas" width="230"><br>**Boston Dynamics Atlas** | <img src="docs/assets/models/figure-03.jpg" alt="Figure 03" width="230"><br>**Figure 03** | <img src="docs/assets/models/tesla-optimus.jpg" alt="Tesla Optimus" width="230"><br>**Tesla Optimus**（第三方识别图） |
+| <img src="docs/assets/models/limx-oli-edu.jpg" alt="逐际动力 Oli EDU" width="230"><br>**逐际动力 Oli EDU** | <img src="docs/assets/models/limx-tron2.jpg" alt="逐际动力 TRON 2 双臂形态" width="230"><br>**逐际动力 TRON 2 双臂形态**（第三方识别图） | <img src="docs/assets/models/unitree-g1d.jpg" alt="宇树 G1-D 旗舰版" width="230"><br>**宇树 G1-D 旗舰版** |
+| <img src="docs/assets/models/zdl-juno2-sd.jpg" alt="智动力 JUNO2-SD" width="230"><br>**智动力 JUNO2-SD** |  |  |
+
+## 布线捋线对比结果
 
 以工厂布线、捋线和接插件装配为目标，当前建议分层如下：
 
-| 层级 | 本体 | 当前判断 |
-|---|---|---|
-| 优先 POC | 智元精灵 G2 | 四舵轮全向底盘，力控、躯干和接口资料相对完整；重点验证横移停稳后的整链路精度。 |
-| 条件 POC | 星海图 R1 Pro 2026 | 三舵轮 360° 全向、双 7 轴机械臂、0–2 m 工作空间；但重复定位 ±0.5 mm，且机械臂无制动器。 |
-| 条件 POC | 千寻智能 Moz1 Pro | SDK 的 `[vx, vy, wz]` 指令确认支持保持朝向横移，单臂 5 kg、700 mm、标称 ±0.05 mm；但公开力控 SDK、Pro 专属手册、连续运行与安全资料不足。 |
-| 补齐资料 | 星尘 Astribot T1 | 1.55 m、约 66 kg、23 DoF、单臂 5 kg、8.99 万元起，已进入量产；但紧凑轮式底盘尚未证明支持全向/蟹行，精度和 SDK 也未量化。 |
-| 条件 POC | 智动力 D1 | 四轮四转支持蟹行且负载高，但整机约 300 kg，精度与力控证据不足。 |
-| 专项验证 | 它石 TARS A1 | 已有每小时 105 次亚毫米线束装配公开纪录，场景证据最强；但本体规格、接口及规模部署验收数据缺失，内部反馈仍有工程差距。 |
-| 技术标杆 | Atlas、Figure 03 | 工业化、触觉、负载和连续运行设计领先；采购、SDK、国内交付与双足贴线横移指标尚不能形成可执行选型。 |
-| 开发平台 | LimX Oli、TRON 2 | 开放接口和工具链较好，适合算法与本体研究；双足/双轮足横移、工业精度与可靠性需要补测。 |
-| 持续观察 | Tesla Optimus | 官方未公开当前代本体的完整工程规格、SDK和外售方案，暂不具备正式采购比较条件。 |
-| 不通过硬门槛 | 宇树 G1-D、智动力 JUNO/L1/Z1 | 差速底盘不能保持机身朝向完成纯横移，不进入当前布线移动本体 POC。 |
+| 排名 | 本体 | 综合分 | 横移门槛 | 当前结论 |
+|---:|---|---:|---|---|
+| 1 | 智元精灵 G2 | **4.60** | 通过 | **优先 POC**；全向、工作空间和量化力控最均衡，验证移动后整链路精度。 |
+| 2 | 星海图 R1 Pro 2026 | **4.10** | 通过 | **条件 POC**；底盘和工作空间合适，主要风险是 ±0.5 mm 和机械臂无制动器。 |
+| 3 | 千寻智能 Moz1 Pro | **3.93** | 通过待实测 | **条件 POC**；SDK确认横移，公开力控接口、Pro专属手册和连续运行证据不足。 |
+| 4 | Boston Dynamics Atlas | 3.85 | 双足待实测 | 技术标杆；工业能力强，但采购、国内交付和接口开放性不足。 |
+| 5 | Figure 03 | 3.80 | 双足待实测 | 技术标杆；触觉和量产设计突出，无公开工业SDK。 |
+| 6 | 智动力 D1 | 3.80 | 通过待实测 | 条件 POC；四轮四转、负载高，但约300 kg且精度、力控证据不足。 |
+| 7 | 它石 TARS A1 | 3.65 | 待确认 | 专项尽调；线束任务证据最强，本体规格和规模部署验收数据不透明。 |
+| 8 | 逐际动力 Oli EDU | 3.35 | 双足待实测 | 开发平台；工具链开放，工业精度和可靠性不足。 |
+| 9 | 星尘 Astribot T1 | 3.20 | 待确认 | 补齐资料；量产和柔性突出，轮系、精度和SDK指标未完整披露。 |
+| 10 | 逐际动力 TRON 2 双臂形态 | 3.20 | 待确认 | 开发平台；“四向移动”尚不能等同保持朝向纯横移。 |
+| 11 | Tesla Optimus | 2.80 | 待确认 | 持续观察；缺少可采购工程规格和第三方集成方式。 |
+| 12 | 宇树 G1-D 旗舰版 | 2.30 | 不通过 | 差速底盘不能纯横移，更适合数据采集和开发。 |
+| 13 | 智动力 JUNO2-SD | 2.15 | 不通过 | 差速底盘不满足当前布线移动硬门槛。 |
+
+## 核心候选参数
+
+| 本体 | 移动结构 | 单臂负载 / 臂展 | 重复定位 | 力控与接口 | 主要风险 |
+|---|---|---|---|---|---|
+| 智元精灵 G2 | 四舵轮全向，1.5 m/s | 5 kg / 696 mm | 0.1 mm | 全关节力矩监测，0.02 Nm、5 kHz；CAN-FD、RS485、1G/10G网口 | 整机移动后的TCP精度仍需验证 |
+| 星海图 R1 Pro 2026 | 三舵轮360°全向，1.5 m/s | 额定3.5 kg、峰值5 kg / 620 mm | ±0.5 mm | 力传感选配；USB、千兆网、Wi-Fi 6 | 精密插接精度和断电下坠 |
+| 千寻智能 Moz1 Pro | 全向轮，稳定1.0 m/s | 5 kg / 700 mm | 标称±0.05 mm | ROS 2/Python、最高120 Hz；CAN、RS485、2.5GbE | 外部力控未开放，Pro资料与旧手册存在冲突 |
+| 智动力 D1 | 四轮四转，1.5 m/s | 额定15 kg、峰值25 kg / 1000 mm | 未公开 | ROS/Python、EtherCAT、CAN、UART | 约300 kg，精度和力控未量化 |
+| 它石 TARS A1 | 轮式，轮系未公开 | 未公开 | 有亚毫米任务纪录 | SDK与末端接口未公开 | 展示纪录不能替代规模部署验收 |
+| 星尘 Astribot T1 | 紧凑轮式，轮系未公开 | 5 kg / 未公开 | 未公开 | 可换末端与算力背包，协议未公开 | 蟹行、精度、力控和工业认证待确认 |
 
 完整参数、型号图示、证据分级和逐项风险见 [`docs/comparison.md`](docs/comparison.md)。评分仅用于采购前筛选，不替代现场 POC；底盘横移、视觉重定位、末端夹爪、力控、断电安全和连续运行必须使用真实线束验证。
 
