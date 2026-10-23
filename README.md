@@ -20,7 +20,7 @@
 
 ## 已纳入范围
 
-当前已纳入 18 个本体或双臂模块，包括智元、千寻智能、星尘、智动力、宇树、天机智能、波士顿动力、Figure AI、Tesla、逐际动力、星海图和它石智航。新增重点产品为：
+当前已纳入 19 个本体或双臂模块，包括智元、千寻智能、星尘、智动力、宇树、天机智能、波士顿动力、Figure AI、Tesla、逐际动力、星海图和它石智航。新增重点产品为：
 
 - Boston Dynamics Atlas
 - Figure 03
@@ -29,6 +29,7 @@
 - 星海图 Galaxea R1 Pro 2026
 - 它石智航 TARS A1
 - 千寻智能 Moz1 Pro
+- 宇树 H2-D 旗舰版（2026-10-23 纳入；双轮差速底盘，不满足横移门槛）
 
 ## 各家本体对比结果
 
@@ -51,6 +52,7 @@
 | <img src="docs/assets/models/tesla-optimus.jpg" alt="Tesla Optimus" width="135"> | 11 | **Tesla Optimus** | 2.80 | 待确认 | 持续观察；缺少可采购工程规格和第三方集成方式。（第三方识别图） |
 | <img src="docs/assets/models/unitree-g1d.jpg" alt="宇树 G1-D 旗舰版" width="135"> | 12 | **宇树 G1-D 旗舰版** | 2.30 | 不通过 | 差速底盘不能纯横移，更适合数据采集和开发。 |
 | <img src="docs/assets/models/zdl-juno2-sd.jpg" alt="智动力 JUNO2-SD" width="135"> | 13 | **智动力 JUNO2-SD** | 2.15 | 不通过 | 差速底盘不满足当前布线移动硬门槛。 |
+| — | 14 | **宇树 H2-D 旗舰版** | 2.05 | 不通过 | 持续观察；单臂额定约7kg有优势，双轮差速底盘待全向版本。（暂无图示） |
 
 ## 核心候选参数
 

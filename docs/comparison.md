@@ -1,6 +1,6 @@
 # 机器人本体详细对比
 
-更新日期：2026-09-17
+更新日期：2026-10-23
 
 ## 决策口径
 
@@ -37,6 +37,7 @@
 | Tesla Optimus | 2.80 | 待确认 | 产线建设/内部验证 | 规格与采购接口不足，不进入正式供应商短名单。 |
 | 宇树 G1-D 旗舰版 | 2.30 | 不通过 | 官方产品 | 差速底盘；更适合数采和开发。 |
 | 智动力 JUNO2-SD | 2.15 | 不通过 | 供应商产品 | 差速底盘且精度、力控量化不足。 |
+| 宇树 H2-D 旗舰版 | 2.05 | 不通过 | 官方宣发 | 单臂额定约7kg有优势；双轮差速底盘不满足横移门槛，等待全向底盘版本与量化参数。 |
 
 分数不能越过硬门槛，也不能代替供货资格。Atlas、Figure 03 即使分数较高，如果无法采购、无法开放接口或无法承担本地售后，就不能进入最终商务排名。
 
@@ -53,6 +54,16 @@
 | Moz1 Pro | 1.50–1.85 m、26 DoF、单臂 7 DoF、5 kg、700 mm、标称 ±0.05 mm、全向轮、稳定最高 1.0 m/s | SDK 明确开放 `[vx, vy, wz]`，支持保持朝向横移；全关节力矩传感、腕部视觉、ROS 2/Python 和 120 Hz 外部控制 | 在线手册主体为旧款 Moz1；公开 SDK 仅开放位置和速度指令，未见力矩/末端力接口；重量、单次续航、Pro IP与安全认证缺失；补能和运行时长口径冲突。 |
 | Astribot T1 | 1.55 m、约 66 kg、23 DoF（不含末端）、单臂 5 kg、8.99 万元起 | 绳驱柔性、碰撞卸力、可换末端与算力背包、自动回充/快捷换电；已公开量产下线 | 官网尚无完整数据表；轮式底盘未证明全向/蟹行；重复精度、力控接口、续航、SDK、IP和安全认证均未量化。 |
 | TARS A1 | 公开确认轮式 A1；完成一小时 105 次亚毫米线束装配纪录 | 唯一具有强线束任务证据；具备模型、本体、夹爪和产线协同经验 | 底盘轮系、臂展、负载、续航、自由度、SDK、IP 全部缺少公开规格；公开纪录不能证明百台部署验收；工装、耗材和 MES 成本高。 |
+| Unitree H2-D 旗舰版 | 20 DoF（不含末端）、单臂额定约 7 kg/峰值约 15 kg、单臂展约 0.6 m、地面至 2 m 作业空间 | 立柱升降+腰部俯仰扩展作业空间；固定底座/固定底盘/移动底盘多形态；夹爪/三指/五指末端可选；单臂额定负载为在库双臂人形中最高 | 双轮差速底盘不支持保持朝向纯横移；重复精度、力控量化、SDK 接口、续航和 IP 未公开；发布日期与价格未标注。 |
+
+## 2026-10-23 本轮新证据（G2/Moz1 建图导航与开放度复核）
+
+按上周报待办复核了 G2 与 Moz1 的官方建图/重定位/导航和真机全身控制开放度，并核对其他供应商官方材料：
+
+1. **智元 G2**：2026-04-28 版用户手册量化底盘导航定位精度——常规 ±5 cm/±3°、高精 ±3 cm/±2°，越障 1.5 cm、爬坡 ≤5°、最小可通过宽度 850 mm；产品页标注整机防护 IP42（此前在库遗漏）。但 G2 本身无公开 SDK 导航/WBC 文档：AimDK 开放平台（open.agibot.com）目前只公开 A2W 的 SLAM 定位建图模块接口（话题/服务协议、地图管理/规划控制/任务执行）和 A2 旗舰款的规控导航接口（导航点/目标点/指定线路导航，任务前需重定位成功）。G2 的底盘建图导航开放度需向供应商书面确认（Q042）。
+2. **千寻智能 Moz1**：官方文档中心存在《Moz1-自主建图导航系统》——Livox MID360S 激光 SLAM 建图 + 重定位模块 + 导航算法，支持 rviz 选点与 ROS service 点位导航（此前在库仅记录"导航工具链"未展开）；口径为旧款 Moz1 而非 Pro。MozRobot SDK 复核仍确认无力矩/末端力控接口。另据官方新闻（2026-07-24），Moz1 已在宁德时代动力电池产线常态化部署、作业成功率 99% 以上——这是旧款 Moz1 口径，Pro 的工业证据仍不足。
+3. **星海图 R1 Pro**：SDK V2.4.0（2026-07-30）明确 Navigation 功能包为附加收费项；导航教程披露激光 SLAM 定位频率 100 Hz、定位精度 <0.05 m、导航限速 0.6 m/s。运控接口确认底盘可同时下发 x/y/w 三向速度（横移接口确认）。国际商店（galaxea-dynamics.com）标价 R1 Pro $69,999、R1 Lite $39,999（2026-10-23 访问，不含灵巧手/VR 遥操/腕部相机，税费运费未列）。
+4. **其他窗口内动态**：Boston Dynamics 发布 Atlas 新一代 GR3 灵巧手（13 DoF，2026-10-01）；Figure 宣布 F.02 机队退役（2026-09-30）并发布 Helix 2.5 家庭零样本泛化（2026-09-17）；逐际动力 Oli EDU 官方续航口径由约 2 h 修正为约 1.5 h，并新增展演交互人形 Luna（160 cm/27 DoF，非工业本体）；宇树新增 H2-D 工业移动双臂宣发（双轮差速底盘，不满足横移门槛）；千寻智能发布商服机器人 Moz2（32 DoF 全向舵轮，非工业场景）；智元产品线新增远征 A3/A3 Ultra（双足人形）；星尘官网 2026-09-23 前后改版，导航主打 S1 与 Lumo/Philia/SmoothRL 等 AI 模型，T1 不再出现在官网导航。
 
 ## 三类场景适配
 
@@ -66,6 +77,7 @@
 | Figure 03 | 高：感知、柔顺手和塑料袋等不规则物体操作突出 | 高潜力：触觉灵敏；工程重复精度未公开 | 中高潜力：触觉适合柔性物体，缺少线束量产验证 |
 | TARS A1 | 高：已公开手机装盒等任务 | 高：有亚毫米任务纪录 | 高证据/高风险：任务最对口，但规模验收和本体透明度不足 |
 | LimX Oli/TRON 2 | 中：开放平台便于二开 | 中：TRON 2 有 ±0.5 mm，Oli 未公开 | 中低：侧向移动和工业耐久性未验证 |
+| 宇树 H2-D 旗舰版 | 中高：单臂额定约 7 kg 适合较重物料与工装 | 待评估：重复精度未公开 | 不通过：双轮差速底盘不能纯横移 |
 | Tesla Optimus | 待评估 | 待评估 | 待评估；目前无法形成工程选型结论 |
 
 ## 关于它石项目的判断
@@ -87,11 +99,13 @@
 
 ## 主要公开来源
 
-- [Boston Dynamics Atlas](https://bostondynamics.com/products/atlas/)
+- [Boston Dynamics Atlas](https://bostondynamics.com/products/atlas/) 与 [GR3 灵巧手博客](https://bostondynamics.com/blog/robot-hands-for-modern-ai-and-real-work/)
 - [Figure 03 产品页](https://www.figure.ai/figure) 与 [技术介绍](https://www.figure.ai/news/introducing-figure-03)
 - [Tesla AI & Robotics](https://www.tesla.com/AI)
-- [逐际动力 Oli 参数](https://www.limxdynamics.com/zh/products/oli/spec) 与 [TRON 2 参数](https://www.limxdynamics.com/zh/products/tron2/spec)
-- [星海图 R1 Pro 产品页](https://galaxea-ai.com/cn/products/R1-Pro) 与 [2026 硬件文档](https://docs.galaxea-dynamics.com/R1Pro/docs/2026/)
-- [千寻智能 Moz1 在线手册](https://docs.spirit-ai.com/zh/moz1/get-started.html)、[MozRobot SDK](https://docs.spirit-ai.com/zh/sdk/get-started.html) 与供应商 Moz1 Pro 产品彩页
+- [逐际动力 Oli 参数](https://www.limxdynamics.com/zh/products/oli/spec)、[TRON 2 参数](https://www.limxdynamics.com/zh/products/tron2/spec) 与 [Luna 产品页](https://www.limxdynamics.com/zh/products/luna)
+- [星海图 R1 Pro 产品页](https://galaxea-ai.com/cn/products/R1-Pro)、[2026 硬件文档](https://docs.galaxea-dynamics.com/R1Pro/docs/2026/)、[SDK V2.4.0 版本日志](https://docs.galaxea-dynamics.com/Changelog/v2.4.0)、[自主导航系统教程](https://docs.galaxea-dynamics.com/R1Pro/docs/2026/function_guide/navigation/r1pro_navigation_guide)、[运控接口](https://docs.galaxea-dynamics.com/R1Pro/docs/2026/software_interface/r1pro_motion_control) 与 [国际商店 R1 Pro](https://galaxea-dynamics.com/products/galaxea-r1-pro-7-dof-dual-arm-wheeled-universal-humanoid-robot)
+- [千寻智能 Moz1 在线手册](https://docs.spirit-ai.com/zh/moz1/get-started.html)、[MozRobot SDK](https://docs.spirit-ai.com/zh/sdk/get-started.html)、[Moz1 自主建图导航系统](https://docs.spirit-ai.com/zh/) 与供应商 Moz1 Pro 产品彩页
+- [智元 G2 用户手册](https://www.agibot.com.cn/filepage/362.html) 与 [AIMA 开放平台 AimDK](https://open.agibot.com/)
+- [宇树 H2-D 产品页](https://www.unitree.com/cn/mobile/H2-D)
 - [星尘智能 T1 首页](https://www.astribot.com/)、[无锡市政府量产信息](https://www.wuxi.gov.cn/doc/2026/07/11/4803940.shtml)、[深圳新闻网发布参数](https://www.sznews.com/news/content/2026-05/27/content_32067943.htm) 与 [世界机器人大会展品信息](https://wrc.cie.org.cn/expo/company/441.html)
 - [天海电子与它石战略合作](https://www.thb.com.cn/content/details_17_319668.html)、[上海经信委产业化信息](https://www.sheitc.sh.gov.cn/zxxx/20260710/480d32461ca145e3bf067ce67dc6c203.html)、[吉尼斯线束纪录](https://guinnessworldrecords.com.br/world-records/782788-most-sub-millimeter-wire-harness-assembled-by-a-robot-in-one-hour)

@@ -18,5 +18,10 @@ Figure 03 面向家庭与商业规模化，官方参数为约 1.73 m、61 kg、2
 - Helix 为专有系统，缺少面向第三方集成商的公开工业 SDK。
 - 双足横移节拍和移动后双手 TCP 精度未知。
 
-来源：[Figure 03 产品页](https://www.figure.ai/figure)、[Figure 03 技术介绍](https://www.figure.ai/news/introducing-figure-03)、[BMW 验证](https://www.figure.ai/news/f-03-at-bmw)
+## 2026-10-23 复核补充
+
+- 2026-09-17 发布 Helix 2.5：在 30 个未见过家庭零样本泛化，产品叙事持续聚焦家庭场景（洗衣/清洁/洗碗等）。
+- 2026-09-30 官方宣布 F.02 机队退役（首个 BMW 部署、Helix 诞生、首次家务与物流部署均由 F.02 完成），维护资源转向 F.03。对工业选型的含义：F.03 为当前唯一量产型号线，但公开工业 SDK 缺失的状态未变。
+
+来源：[Figure 03 产品页](https://www.figure.ai/figure)、[Figure 03 技术介绍](https://www.figure.ai/news/introducing-figure-03)、[BMW 验证](https://www.figure.ai/news/f-03-at-bmw)、[Helix 2.5](https://www.figure.ai/news)、[F.02 Decommission](https://www.figure.ai/news)
 
